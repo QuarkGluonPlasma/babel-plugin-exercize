@@ -1,0 +1,40 @@
+{
+    "configurations": [
+        {
+            "name": "exercize-1-parameters-insert/src/version1.js",
+            "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version1.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
+            "name": "exercize-1-parameters-insert/src/version2.js",
+            "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version2.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
+            "name": "exercize-1-parameters-insert/src/version3.js",
+            "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version3.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
+            "name": "exercize-1-parameters-insert/src/version4.js",
+            "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version4.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        }
+    ]
+}

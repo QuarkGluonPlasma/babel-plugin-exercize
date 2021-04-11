@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unknown plugin console.xx前插入了CallExpression的AST: console.xx前插入了CallExpression的AST 1`] = `
+
+console.log(1);
+        
+function func() {
+    console.info(2);
+}
+        
+export default class Clazz {
+    say() {
+        console.debug(3);
+    }
+    render() {
+        return <div>{console.error(4)}</div>
+    }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(": (1, 0)");
+console.log(1);
+
+function func() {
+  console.log(": (4, 4)");
+  console.info(2);
+}
+
+export default class Clazz {
+  say() {
+    console.log(": (9, 8)");
+    console.debug(3);
+  }
+
+  render() {
+    return <div>{[console.log(": (12, 21)"), console.error(4)]}</div>;
+  }
+}
+
+
+`;
