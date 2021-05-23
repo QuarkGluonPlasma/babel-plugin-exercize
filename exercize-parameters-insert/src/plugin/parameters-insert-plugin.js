@@ -1,4 +1,3 @@
-const generate = require('@babel/generator').default;
 const { declare } = require('@babel/helper-plugin-utils');
 
 const targetCalleeName = ['log', 'info', 'error', 'debug'].map(item => `console.${item}`);
@@ -10,7 +9,7 @@ const parametersInsertPlugin = ({ types, template }, options, dirname) => {
                 if (path.node.isNew) {
                     return;
                 }
-                const calleeName = generate(path.node.callee).code;
+                const calleeName = path.get('callee').toString();
                  if (targetCalleeName.includes(calleeName)) {
                     const { line, column } = path.node.loc.start;
                     const newNode = template.expression(`console.log("${state.file.filename || 'unkown filename'}: (${line}, ${column})")`)();

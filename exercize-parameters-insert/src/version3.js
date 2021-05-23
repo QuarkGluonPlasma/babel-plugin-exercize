@@ -32,7 +32,7 @@ traverse(ast, {
         if (path.node.isNew) {
             return;
         }
-        const calleeName = generate(path.node.callee).code;
+        const calleeName = path.get('callee').toString();
          if (targetCalleeName.includes(calleeName)) {
             const { line, column } = path.node.loc.start;
             const newNode = template.expression(`console.log("filename: (${line}, ${column})")`)();
