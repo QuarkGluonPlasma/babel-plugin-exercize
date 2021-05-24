@@ -1,6 +1,6 @@
 ## babel-plugin-exercize
 
-掘金小册《babel 插件通关秘籍》的案例代码：
+掘金小册[《babel 插件通关秘籍》](https://sourl.co/ijmTn3)的案例代码：
 
 - 插入函数调用参数
 - acorn 插件
