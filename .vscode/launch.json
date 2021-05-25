@@ -35,6 +35,12 @@
                 "<node_internals>/**"
             ],
             "type": "pwa-node"
+        },
+        {
+            "name": "exercize-auto-track/src/index.js",
+            "program": "${workspaceFolder}/exercize-auto-track/src/index.js",
+            "request": "launch",
+            "type": "node"
         }
     ]
 }
