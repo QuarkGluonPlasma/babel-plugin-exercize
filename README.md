@@ -7,9 +7,12 @@
 - [acorn 插件](./exercize-acorn-plugin-guang-keyword/src)
 - default import 转 named import
 - 自动国际化
-- 自动生成文档
+- [自动生成 api 文档](./exercize-auto-document/src/)
 - [linter](./exercize-linter/src)
 - type checker
 - 压缩混淆
 - [js 解释器](./exercize-js-interpreter/src)
 - 手写简易的 babel
+
+
+

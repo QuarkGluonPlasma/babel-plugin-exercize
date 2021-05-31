@@ -37,6 +37,12 @@
             "type": "pwa-node"
         },
         {
+            "name": "exercize-auto-document/src/index.js",
+            "program": "${workspaceFolder}/exercize-auto-document/src/index.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
             "name": "exercize-auto-track/src/index.js",
             "program": "${workspaceFolder}/exercize-auto-track/src/index.js",
             "request": "launch",
