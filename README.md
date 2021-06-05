@@ -9,7 +9,7 @@
 - 自动国际化
 - [自动生成 api 文档](./exercize-auto-document/src/)
 - [linter](./exercize-linter/src)
-- type checker
+- [type checker](./exercize-type-checker/src/)
 - 压缩混淆
 - [js 解释器](./exercize-js-interpreter/src)
 - 手写简易的 babel
