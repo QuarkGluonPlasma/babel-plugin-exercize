@@ -47,6 +47,12 @@
             "program": "${workspaceFolder}/exercize-auto-track/src/index.js",
             "request": "launch",
             "type": "node"
+        },
+        {
+            "name": "exercize-type-checker/src/override.js",
+            "program": "${workspaceFolder}/exercize-type-checker/src/override.js",
+            "request": "launch",
+            "type": "node"
         }
     ]
 }
