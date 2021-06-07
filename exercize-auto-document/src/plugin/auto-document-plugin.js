@@ -2,6 +2,7 @@ const { declare } = require('@babel/helper-plugin-utils');
 const doctrine = require('doctrine');
 const fse = require('fs-extra');
 const path = require('path');
+const renderer = require('./renderer');
 
 function parseComment(commentStr) {
     if (!commentStr) {
@@ -16,17 +17,17 @@ function generate(docs, format = 'json') {
     if (format === 'markdown') {
         return {
             ext: '.md',
-            content: JSON.stringify(docs, null, 4)
+            content: renderer.markdown(docs)
         }
     } else if (format === 'html') {
         return {
             ext: 'html',
-            content: JSON.stringify(docs, null, 4)
+            content: renderer.html(docs)
         }
     } else {
         return {
             ext: 'json',
-            content: JSON.stringify(docs, null, 4)
+            content: renderer.json(docs)
         }        
     }
 }

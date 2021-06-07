@@ -15,7 +15,7 @@ const ast = parser.parse(sourceCode, {
 
 const { code } = transformFromAstSync(ast, sourceCode, {
     plugins: [[autoDocumentPlugin, {
-        outputDir: path.resolve('./docs'),
+        outputDir: path.resolve(__dirname, './docs'),
         format: 'markdown'// html / json
     }]]
 });
