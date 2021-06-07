@@ -53,6 +53,12 @@
             "program": "${workspaceFolder}/exercize-type-checker/src/override.js",
             "request": "launch",
             "type": "node"
+        },
+        {
+            "name": "exercize-auto-i18n/src/index.js",
+            "program": "${workspaceFolder}/exercize-auto-i18n/src/index.js",
+            "request": "launch",
+            "type": "node"
         }
     ]
 }
