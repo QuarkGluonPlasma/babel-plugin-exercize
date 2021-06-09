@@ -1,7 +1,5 @@
 ## babel-plugin-exercize
 
-掘金小册[《babel 插件通关秘籍》](https://sourl.co/ijmTn3)的案例代码：
-
 - [插入函数调用参数](./exercize-parameters-insert/src)
 - [自动埋点](./exercize-auto-track/src)
 - [acorn 插件](./exercize-acorn-plugin-guang-keyword/src)
