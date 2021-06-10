@@ -66,7 +66,7 @@ const autoDocumentPlugin = declare((api, options, dirname) => {
                             type: resolveType(paramPath.getTypeAnnotation())
                         }
                     }),
-                    return: resolveType(path.getTypeAnnotation()),
+                    return: resolveType(path.get('returnType').getTypeAnnotation()),
                     doc: path.node.leadingComments && parseComment(path.node.leadingComments[0].value)
                 });
                 state.file.set('docs', docs);
