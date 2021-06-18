@@ -10,7 +10,7 @@
 - [type checker](./exercize-type-checker/src/)
 - 压缩混淆
 - [js 解释器](./exercize-js-interpreter/src)
-- 手写简易的 babel
+- [手写简易的 babel](./exercize-babel/src)
 
 
 
