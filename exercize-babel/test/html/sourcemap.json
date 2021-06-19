@@ -1,0 +1,1 @@
+{"version":3,"sources":["foo.js"],"names":[],"mappings":"CAAM,CAAI,AAAJ,CAAN;CACU,CAAI,AAAJ,CAAN;CACM,CAAI,AAAJ,CAAN","file":"sourcemap.js","sourcesContent":["const a = 1;\nconst c = 3;\n"]}
