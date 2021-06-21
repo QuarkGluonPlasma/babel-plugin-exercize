@@ -1,11 +1,19 @@
-class Animal {
-    getName() { return ''; }
+console.log(1);
+
+function func() {
+    console.info(2);
 }
-class Dog extends Animal {
-    override bak() {
-        return 'wang';
+
+function add(a, b) {
+    return a+b;
+}
+const b = add(1,2);
+
+export default class Clazz {
+    say() {
+        console.debug(3);
     }
-    override getName() {
-        return 'wang';
+    render() {
+        return <div>{console.error(4)}</div>
     }
 }
