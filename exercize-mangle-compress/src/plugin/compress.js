@@ -32,27 +32,17 @@ const compress = declare((api, options, dirname) => {
             Scopable(path) {
                 Object.entries(path.scope.bindings).forEach(([key, binding]) => {
                     if (!binding.referenced) {
-                        if (binding.path.isAssignmentExpression()) {
-                            if (!path.scope.isPure(binding.path.node.right)) {
-                                binding.path.replaceWith(binding.pat.node.right);
-                            } else {
-                                binding.path.remove();
-                            }
-                        } else if (binding.path.isVariableDeclarator()) {
-                            if (binding.path.get('init').isCallExpression()) {
-                                const comments = binding.path.get('init').node.leadingComments;
-                                if(comments && comments[0]) {
-                                    if (comments[0].value.includes('PURE')) {
-                                        binding.path.remove();
-                                        return;
-                                    }
+                        if (binding.path.get('init').isCallExpression()) {
+                            const comments = binding.path.get('init').node.leadingComments;
+                            if(comments && comments[0]) {
+                                if (comments[0].value.includes('PURE')) {
+                                    binding.path.remove();
+                                    return;
                                 }
                             }
-                            if (!path.scope.isPure(binding.path.node.init)) {
-                                binding.path.parentPath.replaceWith(api.types.expressionStatement(binding.path.node.init));
-                            } else {
-                                binding.path.remove();
-                            }
+                        }
+                        if (!path.scope.isPure(binding.path.node.init)) {
+                            binding.path.parentPath.replaceWith(api.types.expressionStatement(binding.path.node.init));
                         } else {
                             binding.path.remove();
                         }
