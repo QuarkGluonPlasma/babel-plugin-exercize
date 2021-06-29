@@ -2,7 +2,7 @@
  * say 你好
  * @param name 名字
  */
-function sayHi (name: string, age: number, a: boolean) {
+function sayHi (name: string, age: number, a: boolean):string {
     console.log(`hi, ${name}`);
     return `hi, ${name}`;
 }
