@@ -59,6 +59,24 @@
             "program": "${workspaceFolder}/exercize-auto-i18n/src/index.js",
             "request": "launch",
             "type": "node"
+        },
+        {
+            "name": "exercize-mangle-compress/src/index.js",
+            "program": "${workspaceFolder}/exercize-mangle-compress/src/index1.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "exercize-babel/src/parser/test.js",
+            "program": "${workspaceFolder}/exercize-babel/src/parser/test.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "exercize-module-iterator/src/index.js",
+            "program": "${workspaceFolder}/exercize-module-iterator/src/index.js",
+            "request": "launch",
+            "type": "node"
         }
     ]
 }
