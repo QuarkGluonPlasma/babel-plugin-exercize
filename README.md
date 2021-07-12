@@ -12,6 +12,7 @@
 - [type checker](./exercize-type-checker/src/)
 - [压缩混淆](./exercize-mangle-compress/src)
 - [js 解释器](./exercize-js-interpreter/src)
+- [模块遍历器](./exercize-module-iterator/src)
 - [手写简易的 babel](./exercize-babel/src)
 
 
