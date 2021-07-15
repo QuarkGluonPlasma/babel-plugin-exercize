@@ -15,5 +15,30 @@
 - [模块遍历器](./exercize-module-iterator/src)
 - [手写简易的 babel](./exercize-babel/src)
 
+## 下载和运行
+
+```shell
+git clone https://github.com/QuarkGluonPlasma/babel-plugin-exercize
+
+node ./exercize-linter/src/eq-lint-entry.js （或其他路径）
+```
+
+## debug
+
+编辑 .vscode/launch.json 配置
+
+添加一个配置如下：
+
+```javascript
+{
+    "name": "exercize-auto-track/src/index.js",
+    "program": "${workspaceFolder}/exercize-auto-track/src/index.js",
+    "request": "launch",
+    "type": "node"
+}
+```
+然后点击 debug 面板的运行按钮，打断点调试
+
+
 
 
