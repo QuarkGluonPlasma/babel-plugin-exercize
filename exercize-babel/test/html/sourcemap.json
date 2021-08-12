@@ -1,1 +1,1 @@
-{"version":3,"sources":["foo.js"],"names":[],"mappings":"CAAM,CAAI,AAAJ,CAAN;CACU,CAAI,AAAJ,CAAN;CACM,CAAI,AAAJ,CAAN","file":"sourcemap.js","sourcesContent":["const a = 1;\nconst c = 3;\n"]}
+{"version":3,"sources":["foo.js"],"names":[],"mappings":"AAAA,CAAM,CAAI;AAAV,CAAM,CAAI;AACV,CAAM,CAAI;AAEV;AAAmB,AACf,AAAO,AAAI;;;AAGf,AAAI,AAAG","file":"sourcemap.js","sourcesContent":["const c = 1;\nconst d = 2;\n\nfunction add(a, b) {\n    return a + b;\n}\n\nadd(c, d);\n"]}

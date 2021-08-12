@@ -1,4 +1,9 @@
 const b=2;
-const a=1;
-const c=2;
+const c=1;
+const d=2;
+function add(a,b){
+    return a+b
+}
+
+add(c, d)
 //# sourceMappingURL=./sourcemap.json

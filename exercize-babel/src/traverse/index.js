@@ -1,8 +1,9 @@
-const astDefinationsMap = require('./visitorKeys');
+const { visitorKeys } = require('../types');
 const NodePath = require('./path/NodePath');
 
 module.exports = function traverse(node, visitors, parent, parentPath, key, listKey) {
-    const defination = astDefinationsMap.get(node.type);
+
+    const defination = visitorKeys.get(node.type);
     let visitorFuncs = visitors[node.type] || {};
 
     if(typeof visitorFuncs === 'function') {
@@ -11,8 +12,12 @@ module.exports = function traverse(node, visitors, parent, parentPath, key, list
         }
     }
     const path = new NodePath(node, parent, parentPath, key, listKey);
-
     visitorFuncs.enter && visitorFuncs.enter(path);
+
+    if(node.__shouldSkip) {
+        delete node.__shouldSkip;
+        return;
+    }
 
     if (defination.visitor) {
         defination.visitor.forEach(key => {

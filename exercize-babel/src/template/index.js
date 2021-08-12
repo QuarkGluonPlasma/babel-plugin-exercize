@@ -6,7 +6,9 @@ function template(code) {
     });
 }
 template.expression = function(code) {
-    return template(code).body[0].expression;
+    const node =  template(code).body[0].expression;
+    node.loc = null;
+    return node;
 }
 
 module.exports = template;

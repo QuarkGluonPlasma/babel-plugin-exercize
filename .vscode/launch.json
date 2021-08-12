@@ -1,6 +1,19 @@
 {
     "configurations": [
         {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 9229
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/exercize-js-interpreter/src/interpreter1.js"
+        },
+        
+        {
             "name": "exercize-1-parameters-insert/src/version1.js",
             "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version1.js",
             "request": "launch",
@@ -29,7 +42,7 @@
         },
         {
             "name": "exercize-1-parameters-insert/src/version4.js",
-            "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version4.js",
+            "program": "${workspaceFolder}/exercize-parameters-insert/src/version4.js",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -50,7 +63,7 @@
         },
         {
             "name": "exercize-type-checker/src/override.js",
-            "program": "${workspaceFolder}/exercize-type-checker/src/override.js",
+            "program": "${workspaceFolder}/exercize-type-checker/src/type-checker-entry5.js",
             "request": "launch",
             "type": "node"
         },
@@ -62,19 +75,32 @@
         },
         {
             "name": "exercize-mangle-compress/src/index.js",
-            "program": "${workspaceFolder}/exercize-mangle-compress/src/index1.js",
+            "program": "${workspaceFolder}/exercize-mangle-compress/src/index.js",
             "request": "launch",
             "type": "node"
         },
         {
-            "name": "exercize-babel/src/parser/test.js",
-            "program": "${workspaceFolder}/exercize-babel/src/parser/test.js",
+            "name": "exercize-babel/src/parser/test1.js",
+            "program": "${workspaceFolder}/exercize-babel/test/test1.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "exercize-babel/src/parser/test2.js",
+            "program": "${workspaceFolder}/exercize-babel/test/test2.js",
             "request": "launch",
             "type": "node"
         },
         {
             "name": "exercize-module-iterator/src/index.js",
             "program": "${workspaceFolder}/exercize-module-iterator/src/index.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "exercize-babel-macro/src/index.js",
+            "program": "${workspaceFolder}/exercize-babel-macro/src/index.js",
+            "cwd": "${workspaceFolder}/exercize-babel-macro",
             "request": "launch",
             "type": "node"
         }
