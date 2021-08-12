@@ -1,6 +1,7 @@
 {
     "configurations": [
         {
+<<<<<<< HEAD
             "type": "node",
             "request": "attach",
             "name": "Attach",
@@ -16,6 +17,10 @@
         {
             "name": "exercize-1-parameters-insert/src/version1.js",
             "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version1.js",
+=======
+            "name": "exercize-parameters-insert/src/version1.js",
+            "program": "${workspaceFolder}/exercize-parameters-insert/src/version1.js",
+>>>>>>> 0b64b710be577d5b84452411964afe7df213fc36
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -23,8 +28,8 @@
             "type": "pwa-node"
         },
         {
-            "name": "exercize-1-parameters-insert/src/version2.js",
-            "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version2.js",
+            "name": "exercize-parameters-insert/src/version2.js",
+            "program": "${workspaceFolder}/exercize-parameters-insert/src/version2.js",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -32,8 +37,8 @@
             "type": "pwa-node"
         },
         {
-            "name": "exercize-1-parameters-insert/src/version3.js",
-            "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version3.js",
+            "name": "exercize-parameters-insert/src/version3.js",
+            "program": "${workspaceFolder}/exercize-parameters-insert/src/version3.js",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -41,7 +46,11 @@
             "type": "pwa-node"
         },
         {
+<<<<<<< HEAD
             "name": "exercize-1-parameters-insert/src/version4.js",
+=======
+            "name": "exercize-parameters-insert/src/version4.js",
+>>>>>>> 0b64b710be577d5b84452411964afe7df213fc36
             "program": "${workspaceFolder}/exercize-parameters-insert/src/version4.js",
             "request": "launch",
             "skipFiles": [
