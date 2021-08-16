@@ -4,7 +4,7 @@ class Printer {
     constructor (source, fileName) {
         this.buf = '';
         this.sourceMapGenerator = new SourceMapGenerator({
-            file: "sourcemap.js",
+            file: fileName + ".map.json",
         });
         this.fileName = fileName;
         this.sourceMapGenerator.setSourceContent(fileName, source);
@@ -126,6 +126,7 @@ class Printer {
 
         node.body.forEach(item => {
             this.buf += '    ';
+            this.printColumn += 4;
             this[item.type](item);
             this.nextLine();
         });
