@@ -1,7 +1,17 @@
 {
     "configurations": [
         {
-<<<<<<< HEAD
+            "name": "测试 my babel cli",
+            "program": "${workspaceFolder}/exercize-babel/src/cli/index.js",
+            "request": "launch",
+            "type": "node",
+            "args": [
+                "./input/*.js", "--out-dir", "./dist",
+                "--watch",
+            ],
+            "cwd": "${workspaceFolder}/exercize-babel/test"
+        },
+        {
             "type": "node",
             "request": "attach",
             "name": "Attach",
@@ -17,10 +27,6 @@
         {
             "name": "exercize-1-parameters-insert/src/version1.js",
             "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version1.js",
-=======
-            "name": "exercize-parameters-insert/src/version1.js",
-            "program": "${workspaceFolder}/exercize-parameters-insert/src/version1.js",
->>>>>>> 0b64b710be577d5b84452411964afe7df213fc36
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -46,11 +52,7 @@
             "type": "pwa-node"
         },
         {
-<<<<<<< HEAD
             "name": "exercize-1-parameters-insert/src/version4.js",
-=======
-            "name": "exercize-parameters-insert/src/version4.js",
->>>>>>> 0b64b710be577d5b84452411964afe7df213fc36
             "program": "${workspaceFolder}/exercize-parameters-insert/src/version4.js",
             "request": "launch",
             "skipFiles": [
