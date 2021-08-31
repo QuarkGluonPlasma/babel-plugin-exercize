@@ -1,0 +1,1 @@
+{"version":3,"sources":["input1.js"],"names":[],"mappings":"AAAA,CAAM,CAAI;AACV,CAAM,CAAI;;AAGV;AAAmB;IAEf,AAAO,AAAI;;;AAGf,AAAI,AAAG","file":"input1.js.map.json","sourcesContent":["const c = 1;\nconst d = 2;\nconst e = 4;\n\nfunction add(a, b) {\n    const tmp = 1;\n    return a + b;\n}\n\nadd(c, d);\n"]}

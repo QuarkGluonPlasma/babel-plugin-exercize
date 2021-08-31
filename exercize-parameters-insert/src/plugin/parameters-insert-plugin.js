@@ -12,7 +12,7 @@ const parametersInsertPlugin = ({ types, template }, options, dirname) => {
                 const calleeName = path.get('callee').toString();
                  if (targetCalleeName.includes(calleeName)) {
                     const { line, column } = path.node.loc.start;
-                    const newNode = template.expression(`console.log("${state.file.filename || 'unkown filename'}: (${line}, ${column})")`)();
+                    const newNode = template.expression(`console.log("${state.filename || 'unkown filename'}: (${line}, ${column})")`)();
                     newNode.isNew = true;
 
                     if (path.findParent(path => path.isJSXElement())) {
