@@ -1,6 +1,7 @@
 const { declare } = require('@babel/helper-plugin-utils');
 const fse = require('fs-extra');
 const path = require('path');
+const generate = require('@babel/generator').default;
 
 let intlIndex = 0;
 function nextIntlKey() {
@@ -16,7 +17,8 @@ const autoTrackPlugin = declare((api, options, dirname) => {
     }
 
     function getReplaceExpression(path, value, intlUid) {
-        let replaceExpression = api.template.ast(`${intlUid}.t('${value}')`).expression;
+        const expressionParams = path.isTemplateLiteral() ? path.node.expressions.map(item => generate(item).code) : null
+        let replaceExpression = api.template.ast(`${intlUid}.t('${value}'${expressionParams ? ',' + expressionParams.join(',') : ''})`).expression;
         if (path.findParent(p => p.isJSXAttribute()) && !path.findParent(p=> p.isJSXExpressionContainer())) {
             replaceExpression = api.types.JSXExpressionContainer(replaceExpression);
         }
@@ -87,17 +89,26 @@ const autoTrackPlugin = declare((api, options, dirname) => {
                 if (path.node.skipTransform) {
                     return;
                 }
-                path.get('quasis').forEach(templateElementPath => {
-                    const value = templateElementPath.node.value.raw;
-                    if(value) {
-                        let key = nextIntlKey();
-                        save(state.file, key, value);
+                const value = path.get('quasis').map(item => item.node.value.raw).join('{placeholder}');
+                if(value) {
+                    let key = nextIntlKey();
+                    save(state.file, key, value);
 
-                        const replaceExpression = getReplaceExpression(templateElementPath, key, state.intlUid);
-                        templateElementPath.replaceWith(replaceExpression);
-                    }
-                });
-                path.skip();
+                    const replaceExpression = getReplaceExpression(path, key, state.intlUid);
+                    path.replaceWith(replaceExpression);
+                    path.skip();
+                }
+                // path.get('quasis').forEach(templateElementPath => {
+                //     const value = templateElementPath.node.value.raw;
+                //     if(value) {
+                //         let key = nextIntlKey();
+                //         save(state.file, key, value);
+
+                //         const replaceExpression = getReplaceExpression(templateElementPath, key, state.intlUid);
+                //         templateElementPath.replaceWith(replaceExpression);
+                //     }
+                // });
+                // path.skip();
             },
         },
         post(file) {
