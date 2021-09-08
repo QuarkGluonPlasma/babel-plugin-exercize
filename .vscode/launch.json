@@ -1,117 +1,134 @@
 {
     "configurations": [
         {
-            "name": "测试 my babel cli",
-            "program": "${workspaceFolder}/exercize-babel/src/cli/index.js",
-            "request": "launch",
-            "type": "node",
-            "args": [
-                "./input/*.js", "--out-dir", "./dist",
-                "--watch",
-            ],
-            "cwd": "${workspaceFolder}/exercize-babel/test"
-        },
-        {
-            "type": "node",
-            "request": "attach",
-            "name": "Attach",
-            "port": 9229
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/exercize-js-interpreter/src/interpreter1.js"
-        },
-        
-        {
-            "name": "exercize-1-parameters-insert/src/version1.js",
-            "program": "${workspaceFolder}/exercize-1-parameters-insert/src/version1.js",
-            "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        },
-        {
-            "name": "exercize-parameters-insert/src/version2.js",
-            "program": "${workspaceFolder}/exercize-parameters-insert/src/version2.js",
-            "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        },
-        {
-            "name": "exercize-parameters-insert/src/version3.js",
-            "program": "${workspaceFolder}/exercize-parameters-insert/src/version3.js",
-            "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        },
-        {
-            "name": "exercize-1-parameters-insert/src/version4.js",
-            "program": "${workspaceFolder}/exercize-parameters-insert/src/version4.js",
-            "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        },
-        {
-            "name": "exercize-auto-document/src/index.js",
-            "program": "${workspaceFolder}/exercize-auto-document/src/index.js",
+            "name": "插入函数调用参数-version1",
+            "program": "${workspaceFolder}/exercize-parameters-insert/src/version1.js",
             "request": "launch",
             "type": "node"
         },
         {
-            "name": "exercize-auto-track/src/index.js",
+            "name": "插入函数调用参数-version2",
+            "program": "${workspaceFolder}/exercize-parameters-insert/src/version2.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "插入函数调用参数-version3",
+            "program": "${workspaceFolder}/exercize-parameters-insert/src/version3.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "插入函数调用参数-version4",
+            "program": "${workspaceFolder}/exercize-parameters-insert/src/version4.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "自动埋点",
             "program": "${workspaceFolder}/exercize-auto-track/src/index.js",
             "request": "launch",
             "type": "node"
         },
         {
-            "name": "exercize-type-checker/src/override.js",
-            "program": "${workspaceFolder}/exercize-type-checker/src/type-checker-entry5.js",
+            "name": "acorn 插件",
+            "program": "${workspaceFolder}/exercize-acorn-plugin-guang-keyword/src/index.js",
             "request": "launch",
             "type": "node"
         },
         {
-            "name": "exercize-auto-i18n/src/index.js",
+            "name": "自动国际化",
             "program": "${workspaceFolder}/exercize-auto-i18n/src/index.js",
             "request": "launch",
             "type": "node"
         },
         {
-            "name": "exercize-mangle-compress/src/index.js",
+            "name": "自动生成 api 文档",
+            "program": "${workspaceFolder}/exercize-auto-document/src/index.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "linter-eq-lint",
+            "program": "${workspaceFolder}/exercize-linter/src/eq-lint-entry.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "linter-for-direction-lint",
+            "program": "${workspaceFolder}/exercize-linter/src/for-direction-lint-entry.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "linter-no-func-assign-lint",
+            "program": "${workspaceFolder}/exercize-linter/src/no-func-assign-lint-entry.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "type checker-entry2",
+            "program": "${workspaceFolder}/exercize-type-checker/src/type-checker-entry2.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "type checker-entry3",
+            "program": "${workspaceFolder}/exercize-type-checker/src/type-checker-entry3.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "type checker-entry4",
+            "program": "${workspaceFolder}/exercize-type-checker/src/type-checker-entry4.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "type checker-entry5",
+            "program": "${workspaceFolder}/exercize-type-checker/src/type-checker-entry5.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "type checker-entry6",
+            "program": "${workspaceFolder}/exercize-type-checker/src/type-checker-entry6.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "压缩混淆",
             "program": "${workspaceFolder}/exercize-mangle-compress/src/index.js",
             "request": "launch",
             "type": "node"
         },
         {
-            "name": "exercize-babel/src/parser/test1.js",
-            "program": "${workspaceFolder}/exercize-babel/test/test1.js",
+            "name": "js 解释器-1",
+            "program": "${workspaceFolder}/exercize-js-interpreter/src/interpreter1.js",
             "request": "launch",
             "type": "node"
         },
         {
-            "name": "exercize-babel/src/parser/test2.js",
-            "program": "${workspaceFolder}/exercize-babel/test/test2.js",
+            "name": "js 解释器-2",
+            "program": "${workspaceFolder}/exercize-js-interpreter/src/interpreter2.js",
             "request": "launch",
             "type": "node"
         },
         {
-            "name": "exercize-module-iterator/src/index.js",
+            "name": "模块遍历器",
             "program": "${workspaceFolder}/exercize-module-iterator/src/index.js",
             "request": "launch",
             "type": "node"
         },
         {
-            "name": "exercize-babel-macro/src/index.js",
-            "program": "${workspaceFolder}/exercize-babel-macro/src/index.js",
-            "cwd": "${workspaceFolder}/exercize-babel-macro",
+            "name": "手写简易的 babel-test1",
+            "program": "${workspaceFolder}/exercize-babel/test/test1.js",
+            "request": "launch",
+            "type": "node"
+        },
+        {
+            "name": "手写简易的 babel-test2",
+            "program": "${workspaceFolder}/exercize-babel/test/test2.js",
             "request": "launch",
             "type": "node"
         }
