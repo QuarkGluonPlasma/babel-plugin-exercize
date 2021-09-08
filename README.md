@@ -5,7 +5,6 @@
 - [插入函数调用参数](./exercize-parameters-insert/src)
 - [自动埋点](./exercize-auto-track/src)
 - [acorn 插件](./exercize-acorn-plugin-guang-keyword/src)
-- default import 转 named import
 - [自动国际化](./exercize-auto-i18n/src/)
 - [自动生成 api 文档](./exercize-auto-document/src/)
 - [linter](./exercize-linter/src)
