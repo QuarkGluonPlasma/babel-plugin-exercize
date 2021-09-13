@@ -15,10 +15,10 @@ const autoTrackPlugin = declare((api, options, dirname) => {
                                 const specifierPath = curPath.get('specifiers.0');
                                 if (specifierPath.isImportSpecifier()) {
                                     state.trackerImportId = specifierPath.toString();
-                                } else if(specifierPath.isImportNamespaceSpecifier()) {
+                                } else if(specifierPath.isImportNamespaceSpecifier() || specifierPath.isImportDefaultSpecifier()) {
                                     state.trackerImportId = specifierPath.get('local').toString();
                                 }
-                                path.stop();
+                                curPath.stop();
                             }
                         }
                     });
@@ -26,8 +26,8 @@ const autoTrackPlugin = declare((api, options, dirname) => {
                         state.trackerImportId  = importModule.addDefault(path, 'tracker',{
                             nameHint: path.scope.generateUid('tracker')
                         }).name;
-                        state.trackerAST = api.template.statement(`${state.trackerImportId}()`)();
                     }
+                    state.trackerAST = api.template.statement(`${state.trackerImportId}()`)();
                 }
             },
             'ClassMethod|ArrowFunctionExpression|FunctionExpression|FunctionDeclaration'(path, state) {
