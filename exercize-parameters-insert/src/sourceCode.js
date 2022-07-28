@@ -4,7 +4,7 @@ function func() {
     console.info(2);
 }
 
-export default class Clazz {
+export default class Class {
     say() {
         console.debug(3);
     }
