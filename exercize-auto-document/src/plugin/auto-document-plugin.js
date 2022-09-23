@@ -21,14 +21,14 @@ function generate(docs, format = 'json') {
         }
     } else if (format === 'html') {
         return {
-            ext: 'html',
+            ext: '.html',
             content: renderer.html(docs)
         }
     } else {
         return {
-            ext: 'json',
+            ext: '.json',
             content: renderer.json(docs)
-        }        
+        }
     }
 }
 
@@ -38,7 +38,7 @@ function resolveType(tsType) {
         return;
     }
     switch (typeAnnotation.type) {
-        case 'TSStringKeyword': 
+        case 'TSStringKeyword':
             return 'string';
         case 'TSNumberKeyword':
             return 'number';
@@ -60,7 +60,7 @@ const autoDocumentPlugin = declare((api, options, dirname) => {
                 docs.push({
                     type: 'function',
                     name: path.get('id').toString(),
-                    params: path.get('params').map(paramPath=> {
+                    params: path.get('params').map(paramPath => {
                         return {
                             name: paramPath.toString(),
                             type: resolveType(paramPath.getTypeAnnotation())
@@ -71,7 +71,7 @@ const autoDocumentPlugin = declare((api, options, dirname) => {
                 });
                 state.file.set('docs', docs);
             },
-            ClassDeclaration (path, state) {
+            ClassDeclaration(path, state) {
                 const docs = state.file.get('docs');
                 const classInfo = {
                     type: 'class',
@@ -96,7 +96,7 @@ const autoDocumentPlugin = declare((api, options, dirname) => {
                     ClassMethod(path) {
                         if (path.node.kind === 'constructor') {
                             classInfo.constructorInfo = {
-                                params: path.get('params').map(paramPath=> {
+                                params: path.get('params').map(paramPath => {
                                     return {
                                         name: paramPath.toString(),
                                         type: resolveType(paramPath.getTypeAnnotation()),
@@ -108,7 +108,7 @@ const autoDocumentPlugin = declare((api, options, dirname) => {
                             classInfo.methodsInfo.push({
                                 name: path.get('key').toString(),
                                 doc: parseComment(path.node.leadingComments[0].value),
-                                params: path.get('params').map(paramPath=> {
+                                params: path.get('params').map(paramPath => {
                                     return {
                                         name: paramPath.toString(),
                                         type: resolveType(paramPath.getTypeAnnotation())
