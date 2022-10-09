@@ -1,3 +1,10 @@
+/*
+ * @Author: QuarkGluonPlasma
+ * @Date: 2022-09-23 14:26:10
+ * @LastEditors: pym
+ * @Description: 把docs数据转为md格式
+ * @LastEditTime: 2022-10-09 19:11:50
+ */
 module.exports = function(docs) {
     let str = '';
 
@@ -7,7 +14,8 @@ module.exports = function(docs) {
             str += doc.doc.description + '\n';
             if (doc.doc.tags) {
                 doc.doc.tags.forEach(tag => {
-                    str += tag.name + ': ' + tag.description + '\n'; 
+                    str += (tag.name || tag.title) + ': ' + tag.description.replace(':','')  + '\n'; 
+                    // str += tag.name + ': ' + tag.description + '\n'; 
                 })
             }
             str += '>' + doc.name + '(';

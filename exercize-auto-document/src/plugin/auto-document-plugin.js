@@ -1,3 +1,10 @@
+/*
+ * @Author: QuarkGluonPlasma
+ * @Date: 2022-10-09 15:26:39
+ * @LastEditors: pym
+ * @Description: 初步从source生成api文档
+ * @LastEditTime: 2022-10-09 19:10:35
+ */
 const { declare } = require('@babel/helper-plugin-utils');
 const doctrine = require('doctrine');
 const fse = require('fs-extra');
@@ -35,15 +42,24 @@ function generate(docs, format = 'json') {
 function resolveType(tsType) {
     const typeAnnotation = tsType.typeAnnotation;
     if (!typeAnnotation) {
+        if (tsType.type) {
+            return transformType(tsType.type)
+        }
         return;
     }
-    switch (typeAnnotation.type) {
+    return transformType(typeAnnotation.type)
+}
+
+function transformType(type) {
+    switch (type) {
         case 'TSStringKeyword':
             return 'string';
         case 'TSNumberKeyword':
             return 'number';
         case 'TSBooleanKeyword':
             return 'boolean';
+        default:
+            return 'undefined';
     }
 }
 
@@ -67,7 +83,7 @@ const autoDocumentPlugin = declare((api, options, dirname) => {
                         }
                     }),
                     return: resolveType(path.get('returnType').getTypeAnnotation()),
-                    doc: path.node.leadingComments && parseComment(path.node.leadingComments[0].value)
+                    doc: path.node.leadingComments && parseComment(path.node.leadingComments.at(-1).value)
                 });
                 state.file.set('docs', docs);
             },
