@@ -3,7 +3,7 @@
  * @Date: 2022-10-09 15:26:39
  * @LastEditors: pym
  * @Description: 初步从source生成api文档
- * @LastEditTime: 2022-10-09 19:10:35
+ * @LastEditTime: 2022-10-09 19:28:22
  */
 const { declare } = require('@babel/helper-plugin-utils');
 const doctrine = require('doctrine');
@@ -59,7 +59,7 @@ function transformType(type) {
         case 'TSBooleanKeyword':
             return 'boolean';
         default:
-            return 'undefined';
+            return;
     }
 }
 
@@ -82,7 +82,7 @@ const autoDocumentPlugin = declare((api, options, dirname) => {
                             type: resolveType(paramPath.getTypeAnnotation())
                         }
                     }),
-                    return: resolveType(path.get('returnType').getTypeAnnotation()),
+                    return: resolveType(path.get('returnType').getTypeAnnotation()) || 'void',
                     doc: path.node.leadingComments && parseComment(path.node.leadingComments.at(-1).value)
                 });
                 state.file.set('docs', docs);

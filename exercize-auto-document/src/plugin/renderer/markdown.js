@@ -3,7 +3,7 @@
  * @Date: 2022-09-23 14:26:10
  * @LastEditors: pym
  * @Description: 把docs数据转为md格式
- * @LastEditTime: 2022-10-09 19:11:50
+ * @LastEditTime: 2022-10-09 19:27:16
  */
 module.exports = function(docs) {
     let str = '';
@@ -15,7 +15,6 @@ module.exports = function(docs) {
             if (doc.doc.tags) {
                 doc.doc.tags.forEach(tag => {
                     str += (tag.name || tag.title) + ': ' + tag.description.replace(':','')  + '\n'; 
-                    // str += tag.name + ': ' + tag.description + '\n'; 
                 })
             }
             str += '>' + doc.name + '(';
@@ -24,11 +23,11 @@ module.exports = function(docs) {
                     return param.name + ': ' + param.type;
                 }).join(', ');
             }
-            str += ')\n';
+            str += ')'+ ':' +doc.return +'\n';
             str += '#### Parameters:\n';
             if (doc.params) {
                 str += doc.params.map(param => {
-                    return '-' + param.name + '(' + param.type + ')';
+                    return '- ' + param.name + '(' + param.type + ')';
                 }).join('\n');
             }
             str += '\n'
@@ -50,13 +49,13 @@ module.exports = function(docs) {
             str += '#### Properties:\n';
             if (doc.propertiesInfo) {
                 doc.propertiesInfo.forEach(param => {
-                    str += '-' + param.name + ':' + param.type + '\n';
+                    str += '- ' + param.name + ':' + param.type + '\n';
                 });
             }
             str += '#### Methods:\n';
             if (doc.methodsInfo) {
                 doc.methodsInfo.forEach(param => {
-                    str += '-' + param.name + '\n';
+                    str += '- ' + param.name + '\n';
                 });
             }
             str += '\n'
