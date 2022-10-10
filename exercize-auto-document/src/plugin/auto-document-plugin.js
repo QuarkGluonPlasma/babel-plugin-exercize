@@ -3,7 +3,7 @@
  * @Date: 2022-10-09 15:26:39
  * @LastEditors: pym
  * @Description: 初步从source生成api文档
- * @LastEditTime: 2022-10-09 19:28:22
+ * @LastEditTime: 2022-10-10 10:39:45
  */
 const { declare } = require('@babel/helper-plugin-utils');
 const doctrine = require('doctrine');
@@ -97,7 +97,7 @@ const autoDocumentPlugin = declare((api, options, dirname) => {
                     propertiesInfo: []
                 };
                 if (path.node.leadingComments) {
-                    classInfo.doc = parseComment(path.node.leadingComments[0].value);
+                    classInfo.doc = parseComment(path.node.leadingComments.at(-1).value);
                 }
                 path.traverse({
                     ClassProperty(path) {
@@ -116,21 +116,21 @@ const autoDocumentPlugin = declare((api, options, dirname) => {
                                     return {
                                         name: paramPath.toString(),
                                         type: resolveType(paramPath.getTypeAnnotation()),
-                                        doc: parseComment(path.node.leadingComments[0].value)
+                                        doc: parseComment(path.node.leadingComments.at(-1).value)
                                     }
                                 })
                             }
                         } else {
                             classInfo.methodsInfo.push({
                                 name: path.get('key').toString(),
-                                doc: parseComment(path.node.leadingComments[0].value),
+                                doc: parseComment(path.node.leadingComments.at(-1).value),
                                 params: path.get('params').map(paramPath => {
                                     return {
                                         name: paramPath.toString(),
                                         type: resolveType(paramPath.getTypeAnnotation())
                                     }
                                 }),
-                                return: resolveType(path.getTypeAnnotation())
+                                return: resolveType(path.get('returnType').getTypeAnnotation()) || 'void',
                             })
                         }
                     }
