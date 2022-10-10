@@ -11,7 +11,7 @@ function sayHi (name: string, age: number, a: boolean):string {
  * say 你好,没有返回类型
  * @param name 名字
  */
-function sayHi2 (name: string, age: number, a: boolean):void {
+function sayHi2 ():void {
     console.log(`hi, ${name}`);
 }
 

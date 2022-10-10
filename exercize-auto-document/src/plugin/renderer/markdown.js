@@ -28,7 +28,7 @@ module.exports = function (docs) {
             str += '#### Methods:\n';
             if (doc.methodsInfo) {
                 doc.methodsInfo.forEach(param => {
-                    str += transformFunc(str, param, 5)
+                    str = transformFunc(str, param, 5)
                 });
             }
             str += '\n'
@@ -48,7 +48,7 @@ function stringRepeate(params, len) {
     return str;
 }
 function transformFunc(str, doc, titileDeep = 2) {
-    str += stringRepeate('#', titileDeep)+' ' + doc.name + '\n';
+    str += stringRepeate('#', titileDeep) + ' ' + doc.name + '\n';
     str += doc.doc.description + '\n';
     if (doc.doc.tags) {
         doc.doc.tags.forEach(tag => {
@@ -62,11 +62,13 @@ function transformFunc(str, doc, titileDeep = 2) {
         }).join(', ');
     }
     str += ')' + ':' + doc.return + '\n';
-    str += stringRepeate('#', titileDeep + 1) + ' Parameters:\n';
-    if (doc.params) {
+    str += stringRepeate('#', (titileDeep + 1) < 4 ? 4 : (titileDeep + 1)) + ' Parameters:\n';
+    if (doc.params && doc.params.length) {
         str += doc.params.map(param => {
             return '- ' + param.name + '(' + param.type + ')';
         }).join('\n');
+    } else {
+        str += 'null\n';
     }
     str += '\n'
     return str
