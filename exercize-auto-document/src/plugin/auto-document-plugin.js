@@ -1,10 +1,3 @@
-/*
- * @Author: QuarkGluonPlasma
- * @Date: 2022-10-09 15:26:39
- * @LastEditors: pym
- * @Description: 初步从source生成api文档
- * @LastEditTime: 2022-10-09 19:56:30
- */
 const { declare } = require('@babel/helper-plugin-utils');
 const doctrine = require('doctrine');
 const fse = require('fs-extra');

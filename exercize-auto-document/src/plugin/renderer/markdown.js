@@ -1,10 +1,3 @@
-/*
- * @Author: QuarkGluonPlasma
- * @Date: 2022-09-23 14:26:10
- * @LastEditors: pym
- * @Description: 把docs数据转为md格式
- * @LastEditTime: 2022-10-10 10:42:26
- */
 module.exports = function (docs) {
     let str = '';
 

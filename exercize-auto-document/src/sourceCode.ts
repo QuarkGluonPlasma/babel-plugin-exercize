@@ -30,4 +30,11 @@ class Guang {
     sayHi (): string {
         return `hi, I'm ${this.name}`;
     }
+
+    /**
+     * 方法测试2
+     */
+     sayHi2 (str:string): string {
+        return `hi, I'm ${this.name}. ${str}`;
+    }
 }
