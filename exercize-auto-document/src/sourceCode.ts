@@ -1,3 +1,4 @@
+
 /**
  * say 你好
  * @param name 名字
@@ -5,6 +6,13 @@
 function sayHi (name: string, age: number, a: boolean):string {
     console.log(`hi, ${name}`);
     return `hi, ${name}`;
+}
+/**
+ * say 你好,没有返回类型
+ * @param name 名字
+ */
+function sayHi2 ():void {
+    console.log(`hi, ${name}`);
 }
 
 /**
@@ -21,5 +29,12 @@ class Guang {
      */
     sayHi (): string {
         return `hi, I'm ${this.name}`;
+    }
+
+    /**
+     * 方法测试2
+     */
+     sayHi2 (str:string): string {
+        return `hi, I'm ${this.name}. ${str}`;
     }
 }
